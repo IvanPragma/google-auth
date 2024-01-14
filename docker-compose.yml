@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    container_name: google-auth-app
+    env_file: ./config/.env
+    ports:
+      - "8000:8000"
+    command: [
+      "./docker/start_server.sh"
+    ]
